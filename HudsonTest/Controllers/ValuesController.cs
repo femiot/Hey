@@ -13,7 +13,7 @@ namespace HudsonTest.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            // Test
+            // Test flakes
             return new string[] { "value1", "value2" };
         }
 

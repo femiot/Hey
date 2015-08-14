@@ -4,7 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{E376D35F-3BC3-4388-B54A-EE288612E7C9}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -290,6 +291,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="setup.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -341,7 +343,8 @@
           <IISUrl>http://localhost:60806/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
@@ -377,20 +380,16 @@
     <!-- Directory where your web.config will be copied -->
     <TransformedWebConfigDestination>$(MSBuildProjectDirectory)</TransformedWebConfigDestination>
   </PropertyGroup>
-
   <!--
   This target transforms the web.config based on current configuration and
   put the transformed files in $(TransformedWebConfigDestination) folder
 -->
   <Target Name="ConfigSubstitution">
-    <CallTarget Targets="TransformWebConfig"/>
-
+    <CallTarget Targets="TransformWebConfig" />
     <ItemGroup>
-      <TransformedWebConfig Include="obj\$(Configuration)\TransformWebConfig\transformed\Web.config"/>
+      <TransformedWebConfig Include="obj\$(Configuration)\TransformWebConfig\transformed\Web.config" />
     </ItemGroup>
-
     <!-- Copy the transformed web.config to the configured destination -->
-    <Copy SourceFiles="@(TransformedWebConfig)"
-          DestinationFolder="$(TransformedWebConfigDestination)"/>
+    <Copy SourceFiles="@(TransformedWebConfig)" DestinationFolder="$(TransformedWebConfigDestination)" />
   </Target>
 </Project>

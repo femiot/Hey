@@ -1,0 +1,47 @@
+﻿In order
+
+Poll SCM
+H/4 * * * *
+
+MSBuild Setup
+
+HudsonTest\HudsonTest.csproj
+
+/t:ConfigSubstitution /p:Configuration=Staging;TransformedWebConfigDestination=\
+
+
+Batch command:
+
+cd "C:\Program Files\FreeFileSync\" 
+FreeFileSync.exe "C:\Program Files (x86)\Jenkins\jobs\f\f.ffs_batch"
+echo ===============================================================================
+echo ##### Results :
+echo ===============================================================================
+@echo off
+for /f "delims=" %%x in ('dir "D:\Jenkins\jobs\f\ffs-logs\" /od /b') do set recent=%%x
+echo error level is %ERRORLEVEL%
+echo ===============================================================================
+if %ERRORLEVEL% == 0 goto SYNCSUCCESS
+if %ERRORLEVEL% == 1 goto SYNCWARNINGS
+if %ERRORLEVEL% == 2 goto SYNCERRORS
+if %ERRORLEVEL% == 3 goto SYNCABORTED
+goto SYNCFAIL
+:SYNCFAIL
+echo ##### FreeFileSync failed.
+type "D:\Jenkins\jobs\f\ffs-logs\%recent%"
+exit 2
+:SYNCSUCCESS
+echo ##### FreeFileSync completed successfully!
+exit 0
+:SYNCWARNINGS
+echo ##### FreeFileSync completed, but with warnings.
+type "D:\Jenkins\jobs\f\ffs-logs\%recent%"
+exit 1
+:SYNCERRORS
+echo ##### FreeFileSync completed, but with warnings.
+type "D:\Jenkins\jobs\f\ffs-logs\%recent%"
+exit 2
+:SYNCABORTED
+echo ##### FreeFileSync aborted.
+type "D:\Jenkins\jobs\f\ffs-logs\%recent%"
+exit 3

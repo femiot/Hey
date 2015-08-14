@@ -386,7 +386,7 @@
     <CallTarget Targets="TransformWebConfig"/>
 
     <ItemGroup>
-      <TransformedWebConfig Include="..\obj\$(Configuration)\TransformWebConfig\Web.config"/>
+      <TransformedWebConfig Include="$(MSBuildProjectDirectory)\obj\$(Configuration)\TransformWebConfig\Web.config"/>
     </ItemGroup>
 
     <!-- Copy the transformed web.config to the configured destination -->

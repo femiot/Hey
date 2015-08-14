@@ -318,6 +318,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Web.Dev.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Web.Staging.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

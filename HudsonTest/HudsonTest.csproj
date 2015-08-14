@@ -389,7 +389,7 @@
     <ItemGroup>
       <TransformedWebConfig Include="obj\$(Configuration)\TransformWebConfig\transformed\Web.config" />
     </ItemGroup>
-    <!-- Copy the transformed web.config to the configured destination 
-    <Copy SourceFiles="@(TransformedWebConfig)" DestinationFolder="$(TransformedWebConfigDestination)" />-->
+    <!-- Copy the transformed web.config to the configured destination -->
+    <Copy SourceFiles="@(TransformedWebConfig)" DestinationFolder="$(TransformedWebConfigDestination)" />
   </Target>
 </Project>

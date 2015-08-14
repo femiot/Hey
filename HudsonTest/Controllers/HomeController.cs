@@ -10,7 +10,13 @@ namespace HudsonTest.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+#if Dev
+            ViewBag.Title = "Home Page - Dev";
+#endif
+
+#if Staging
+            ViewBag.Title = "Home Page - Staging";
+#endif
 
             return View();
         }

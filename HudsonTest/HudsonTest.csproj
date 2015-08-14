@@ -373,4 +373,24 @@
     <!--Publish copies the untransformed App.config to deployment directory so overwrite it-->
     <Copy Condition="Exists('$(DeployedConfig)')" SourceFiles="$(IntermediateOutputPath)$(TargetFileName).config" DestinationFiles="$(DeployedConfig)" />
   </Target>
+  <PropertyGroup>
+    <!-- Directory where your web.config will be copied -->
+    <TransformedWebConfigDestination>$(MSBuildProjectDirectory)</TransformedWebConfigDestination>
+  </PropertyGroup>
+
+  <!--
+  This target transforms the web.config based on current configuration and
+  put the transformed files in $(TransformedWebConfigDestination) folder
+-->
+  <Target Name="ConfigSubstitution">
+    <CallTarget Targets="TransformWebConfig"/>
+
+    <ItemGroup>
+      <TransformedWebConfig Include="obj\$(Configuration)\TransformWebConfig\Web.config"/>
+    </ItemGroup>
+
+    <!-- Copy the transformed web.config to the configured destination -->
+    <Copy SourceFiles="@(TransformedWebConfig)"
+          DestinationFolder="$(TransformedWebConfigDestination)"/>
+  </Target>
 </Project>

@@ -51,3 +51,7 @@ System Config
 MsBuild:
 C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe
 Default Parameter: /m
+
+
+echo overwriting web.config
+xcopy /s /y "C:\Program Files (x86)\Jenkins\jobs\f\workspace\HudsonTest\obj\Staging\TransformWebConfig\transformed\Web.Config" D:\Deploy\v1\Dev

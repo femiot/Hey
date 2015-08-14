@@ -45,3 +45,9 @@ exit 2
 echo ##### FreeFileSync aborted.
 type "D:\Jenkins\jobs\f\ffs-logs\%recent%"
 exit 3
+
+
+System Config
+MsBuild:
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe
+Default Parameter: /m

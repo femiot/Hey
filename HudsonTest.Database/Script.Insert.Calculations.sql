@@ -13,8 +13,8 @@ Use Calculations
 TRUNCATE TABLE dbo.Maths
 INSERT INTO dbo.Maths values ('12:30','xyz')
 INSERT INTO dbo.Maths values ('12:40','xyz')
-INSERT INTO dbo.Maths values ('12:50',null)
-INSERT INTO dbo.Maths values ('1:00',null)
+INSERT INTO dbo.Maths values ('12:50','Jeff')
+INSERT INTO dbo.Maths values ('1:00','jeff')
 INSERT INTO dbo.Maths values ('1:10','abc')
 INSERT INTO dbo.Maths values ('1:20','abc')
 INSERT INTO dbo.Maths values ('1:30','xyz')

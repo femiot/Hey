@@ -6,8 +6,16 @@ H/4 * * * *
 MSBuild Setup
 
 HudsonTest\HudsonTest.csproj
-
 /t:ConfigSubstitution /p:Configuration=Staging;TransformedWebConfigDestination=\
+
+
+MSBuild Setup 
+No csproj modifications
+HudsonTest.Database\HudsonTest.Database.sqlproj
+/t:Build;Publish /p:SqlPublishProfilePath=HudsonTest.Database.publish.xml
+
+Download SQL Server Data Tools:
+https://msdn.microsoft.com/en-us/library/mt204009.aspx
 
 
 Batch command:

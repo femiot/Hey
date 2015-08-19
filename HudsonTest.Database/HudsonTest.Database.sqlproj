@@ -66,6 +66,8 @@
     <Build Include="dbo\Tables\Maths.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="HudsonTest.Database.publish.xml" />
+    <None Include="HudsonTest.Database.publish.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

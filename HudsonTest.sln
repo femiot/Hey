@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35DE34
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HudsonTest.Database", "HudsonTest.Database\HudsonTest.Database.sqlproj", "{A357D5C7-B9F7-4CEB-A2B3-071944B02E9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,15 @@ Global
 		{E376D35F-3BC3-4388-B54A-EE288612E7C9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E376D35F-3BC3-4388-B54A-EE288612E7C9}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{E376D35F-3BC3-4388-B54A-EE288612E7C9}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{A357D5C7-B9F7-4CEB-A2B3-071944B02E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A357D5C7-B9F7-4CEB-A2B3-071944B02E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A357D5C7-B9F7-4CEB-A2B3-071944B02E9E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A357D5C7-B9F7-4CEB-A2B3-071944B02E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A357D5C7-B9F7-4CEB-A2B3-071944B02E9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A357D5C7-B9F7-4CEB-A2B3-071944B02E9E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A357D5C7-B9F7-4CEB-A2B3-071944B02E9E}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{A357D5C7-B9F7-4CEB-A2B3-071944B02E9E}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{A357D5C7-B9F7-4CEB-A2B3-071944B02E9E}.Staging|Any CPU.Deploy.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

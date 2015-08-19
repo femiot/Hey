@@ -13,12 +13,12 @@ HudsonTest\HudsonTest.csproj
 Batch command:
 
 cd "C:\Program Files\FreeFileSync\" 
-FreeFileSync.exe "C:\Program Files (x86)\Jenkins\jobs\f\f.ffs_batch"
+FreeFileSync.exe "C:\Program Files (x86)\Jenkins\jobs\Dev_HudsonTest\f.ffs_batch"
 echo ===============================================================================
 echo ##### Results :
 echo ===============================================================================
 @echo off
-for /f "delims=" %%x in ('dir "D:\Jenkins\jobs\f\ffs-logs\" /od /b') do set recent=%%x
+for /f "delims=" %%x in ('dir "C:\Program Files (x86)\Jenkins\jobs\Dev_HudsonTest\ffs_logs\" /od /b') do set recent=%%x
 echo error level is %ERRORLEVEL%
 echo ===============================================================================
 if %ERRORLEVEL% == 0 goto SYNCSUCCESS
@@ -28,23 +28,24 @@ if %ERRORLEVEL% == 3 goto SYNCABORTED
 goto SYNCFAIL
 :SYNCFAIL
 echo ##### FreeFileSync failed.
-type "D:\Jenkins\jobs\f\ffs-logs\%recent%"
+type "C:\Program Files (x86)\Jenkins\jobs\Dev_HudsonTest\ffs_logs\%recent%"
 exit 2
 :SYNCSUCCESS
 echo ##### FreeFileSync completed successfully!
 exit 0
 :SYNCWARNINGS
 echo ##### FreeFileSync completed, but with warnings.
-type "D:\Jenkins\jobs\f\ffs-logs\%recent%"
+type "C:\Program Files (x86)\Jenkins\jobs\Dev_HudsonTest\ffs_logs\%recent%"
 exit 1
 :SYNCERRORS
 echo ##### FreeFileSync completed, but with warnings.
-type "D:\Jenkins\jobs\f\ffs-logs\%recent%"
+type "C:\Program Files (x86)\Jenkins\jobs\Dev_HudsonTest\ffs_logs\%recent%"
 exit 2
 :SYNCABORTED
 echo ##### FreeFileSync aborted.
-type "D:\Jenkins\jobs\f\ffs-logs\%recent%"
+type "C:\Program Files (x86)\Jenkins\jobs\Dev_HudsonTest\ffs_logs\%recent%"
 exit 3
+
 
 
 System Config
@@ -54,4 +55,4 @@ Default Parameter: /m
 
 
 echo overwriting web.config
-xcopy /s /y "C:\Program Files (x86)\Jenkins\jobs\f\workspace\HudsonTest\obj\Staging\TransformWebConfig\transformed\Web.Config" D:\Deploy\v1\Dev
+xcopy /s /y "C:\Program Files (x86)\Jenkins\jobs\Dev_HudsonTest\workspace\HudsonTest\obj\Dev\TransformWebConfig\transformed\Web.Config" C:\Deploy\v1\Dev

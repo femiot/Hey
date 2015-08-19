@@ -13,13 +13,13 @@ namespace HudsonTest.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            // Test
             return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
         public string Get(int id)
         {
+            // test again
             return "value";
         }
 

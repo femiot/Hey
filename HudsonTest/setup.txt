@@ -64,3 +64,7 @@ Default Parameter: /m
 
 echo overwriting web.config
 xcopy /s /y "C:\Program Files (x86)\Jenkins\jobs\Dev_HudsonTest\workspace\HudsonTest\obj\Dev\TransformWebConfig\transformed\Web.Config" C:\Deploy\v1\Dev
+
+windows powershell 
+Add-Type -A System.IO.Compression.FileSystem
+[IO.Compression.ZipFile]::CreateFromDirectory('C:\Websites', 'package.zip')
